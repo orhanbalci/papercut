@@ -17,6 +17,7 @@ Add the following to your `Cargo.toml` to use Papercut as a library:
 ```toml
 [dependencies]
 papercut = "0.1.0"
+```
 
 ## Usage
 
@@ -67,22 +68,22 @@ cargo run --bin slice-image -- --image image.png --num-tiles 4 --dir ./output --
 ```
 
 Arguments
---image: Path to the image file to slice (required).
---num-tiles: Number of tiles to create (optional).
---dir: Output directory for the tiles (default: ./).
---format: Output image format (default: png).
---rows: Number of rows to divide the image (optional, used when --num-tiles is not specified).
---columns: Number of columns to divide the image (optional, used when --num-tiles is not specified).
+**--image**: Path to the image file to slice (required).
+**--num-tiles**: Number of tiles to create (optional).
+**--dir**: Output directory for the tiles (default: ./).
+**--format**: Output image format (default: png).
+**--rows**: Number of rows to divide the image (optional, used when --num-tiles is not specified).
+**--columns**: Number of columns to divide the image (optional, used when --num-tiles is not specified).
 
 Examples
 
 Slice an Image into 4 Tiles
-```
+```shell
 cargo run --bin slice-image -- --image image.png --num-tiles 4 --dir ./output --format png
 ```
 
 Slice an Image into a Custom Grid
-```
+```shell
 cargo run --bin slice-image -- --image image.png --rows 2 --columns 2 --dir ./output --format png
 ```
 
@@ -100,3 +101,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 ```
+
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for details.
