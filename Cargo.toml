@@ -11,7 +11,7 @@ license = "MIT"
 repository = "https://github.com/orhanbalci/papercut"
 readme = "README.md"
 keywords = ["image", "slicing", "tiles", "processing"]
-categories = ["graphics", "image-processing", "utilities"]
+categories = ["graphics", "multimedia", "command-line-utilities"]
 homepage = "https://github.com/yourusername/papercut"
 documentation = "https://docs.rs/papercut"
 
