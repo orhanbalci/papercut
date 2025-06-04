@@ -2,11 +2,11 @@
 
 Papercut is a Rust library and CLI tool for slicing and joining images. It provides functionality to split an image into tiles, save those tiles, and combine them back into a single image. This library is useful for image processing tasks such as creating image grids or splitting large images into smaller parts.
 
-## Acknowledgments
+## 🙏 Acknowledgments
 
 This project is a Rust translation of the Python project [`image_slicer`](https://github.com/samdobson/image_slicer) by Sam Dobson. The functionality and structure of `papercut` are heavily inspired by the original project. Special thanks to [Sam Dobson](https://github.com/samdobson) for creating the original library.
 
-## Features
+## ✨ Features
 
 - **Slice Images**: Split an image into tiles based on the number of tiles or specified rows and columns.
 - **Save Tiles**: Save the sliced tiles to disk with customizable filenames and formats.
@@ -14,7 +14,7 @@ This project is a Rust translation of the Python project [`image_slicer`](https:
 - **Validation**: Perform sanity checks on the number of tiles, rows, and columns.
 - **Utilities**: Includes helper functions for working with filenames and directories.
 
-## Installation
+## 🛠️ Installation
 
 Add the following to your `Cargo.toml` to use Papercut as a library:
 
@@ -23,9 +23,9 @@ Add the following to your `Cargo.toml` to use Papercut as a library:
 papercut = "0.1.0"
 ```
 
-## Usage
+## 🚀 Usage
 
-### Slice an Image
+### 🖼️ Slice an Image
 
 ```rust
 use papercut::slice;
@@ -37,7 +37,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 }
 ```
 
-### Save Tiles
+### 💾 Save Tiles
 
 ```rust
 use papercut::{save_tiles, get_basename};
@@ -50,7 +50,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 }
 ```
 
-### Join Tiles
+### 💾 Save Tiles
 
 ```rust
 use papercut::join;
@@ -64,7 +64,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 }
 ```
 
-## CLI Tool
+## 🖥️ CLI Tool
 Papercut includes a CLI tool for slicing images. To use it, build the binary and run it:
 
 ```
@@ -79,7 +79,7 @@ Arguments
 - **--rows**: Number of rows to divide the image (optional, used when --num-tiles is not specified).
 - **--columns**: Number of columns to divide the image (optional, used when --num-tiles is not specified).
 
-Examples
+### 📚 Examples
 
 Slice an Image into 4 Tiles
 ```shell
@@ -107,5 +107,5 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```
 
 
-## License
+## 📜 License
 This project is licensed under the MIT License. See the LICENSE file for details.
