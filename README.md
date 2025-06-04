@@ -50,7 +50,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 }
 ```
 
-### 💾 Save Tiles
+### 🔄 Join Tiles
 
 ```rust
 use papercut::join;
