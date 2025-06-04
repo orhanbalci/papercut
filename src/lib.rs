@@ -3,9 +3,8 @@ pub mod utils;
 
 use image::{DynamicImage, GenericImage, RgbaImage};
 use std::{
-    env, f64, fs,
+    env, fs,
     path::{Path, PathBuf},
-    ptr::read_volatile,
 };
 pub use tile::*;
 pub use utils::*;

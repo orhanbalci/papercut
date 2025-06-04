@@ -1,3 +1,11 @@
+//! The `utils` module provides utility functions for working with filenames, directories, and image-related operations.
+//!
+//! # Features
+//!
+//! - **Filename Handling**: Extract the basename of a file or derive columns and rows from filenames.
+//! - **Directory Operations**: Open all images in a directory.
+//! - **Image Utilities**: Perform operations on image files such as determining layout and extracting metadata.
+
 use std::{fs, path::Path};
 
 use image::DynamicImage;
