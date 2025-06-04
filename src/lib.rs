@@ -5,9 +5,10 @@ use image::{DynamicImage, GenericImage, RgbaImage};
 use std::{
     env, f64, fs,
     path::{Path, PathBuf},
+    ptr::read_volatile,
 };
-use tile::Tile;
-use utils::get_basename;
+pub use tile::*;
+pub use utils::*;
 
 const SPLIT_LIMIT: u32 = 99;
 
@@ -26,9 +27,9 @@ const SPLIT_LIMIT: u32 = 99;
 /// assert_eq!(rows, 2);
 /// ```
 pub fn calc_columns_rows(n: u32) -> (u32, u32) {
-    let num_columns = f64::ceil(f64::sqrt(n as f64)) as u32;
-    let num_rows = f64::ceil(n as f64 / num_columns as f64) as u32;
-
+    let num_columns = f32::ceil(f32::sqrt(n as f32)) as u32;
+    let num_rows = f32::ceil(n as f32 / num_columns as f32) as u32;
+    dbg!(n, num_columns, num_rows, n as f32 / num_columns as f32);
     (num_columns, num_rows)
 }
 
@@ -120,8 +121,13 @@ pub fn slice(
     row: Option<u32>,
     save: bool,
 ) -> Result<Vec<Tile>, String> {
+    let relative_path = Path::new(filename);
+    let full_path = relative_path
+        .canonicalize()
+        .expect("Failed to canonicalize path");
     // Open the image
-    let mut im = image::open(filename).map_err(|_| "can not open image")?;
+    let mut im = image::open(&full_path)
+        .map_err(|_| format!("can not open image {}", full_path.to_str().unwrap()))?;
     let (im_w, im_h) = (im.width(), im.height());
 
     let (columns, rows) = if let Some(number_tiles) = number_tiles {
@@ -133,7 +139,6 @@ pub fn slice(
     } else {
         return Err("Invalid tile configuration.".to_string());
     };
-
     let tile_w = im_w / columns;
     let tile_h = im_h / rows;
 
@@ -142,6 +147,9 @@ pub fn slice(
 
     for pos_y in (0..im_h).step_by(tile_h as usize) {
         for pos_x in (0..im_w).step_by(tile_w as usize) {
+            if pos_x + tile_w > im_w || pos_y + tile_h > im_h {
+                continue;
+            }
             let area = (
                 pos_x,
                 pos_y,
