@@ -68,7 +68,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 Papercut includes a CLI tool for slicing images. To use it, build the binary and run it:
 
 ```
-cargo run --bin slice-image -- --image image.png --num-tiles 4 --dir ./output --format png
+cargo run --example slice-image -- --image image.png --num-tiles 4 --dir ./output --format png
 ```
 
 Arguments
@@ -83,12 +83,12 @@ Arguments
 
 Slice an Image into 4 Tiles
 ```shell
-cargo run --bin slice-image -- --image image.png --num-tiles 4 --dir ./output --format png
+cargo run --example slice-image -- --image image.png --num-tiles 4 --dir ./output --format png
 ```
 
 Slice an Image into a Custom Grid
 ```shell
-cargo run --bin slice-image -- --image image.png --rows 2 --columns 2 --dir ./output --format png
+cargo run --example slice-image -- --image image.png --rows 2 --columns 2 --dir ./output --format png
 ```
 
 Combine Tiles Back into a Single Image
