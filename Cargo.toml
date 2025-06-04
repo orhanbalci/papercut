@@ -12,7 +12,7 @@ repository = "https://github.com/orhanbalci/papercut"
 readme = "README.md"
 keywords = ["image", "slicing", "tiles", "processing"]
 categories = ["graphics", "multimedia", "command-line-utilities"]
-homepage = "https://github.com/yourusername/papercut"
+homepage = "https://github.com/orhanbalci/papercut"
 documentation = "https://docs.rs/papercut"
 
 [dependencies]
