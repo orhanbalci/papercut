@@ -68,12 +68,12 @@ cargo run --bin slice-image -- --image image.png --num-tiles 4 --dir ./output --
 ```
 
 Arguments
-**--image**: Path to the image file to slice (required).
-**--num-tiles**: Number of tiles to create (optional).
-**--dir**: Output directory for the tiles (default: ./).
-**--format**: Output image format (default: png).
-**--rows**: Number of rows to divide the image (optional, used when --num-tiles is not specified).
-**--columns**: Number of columns to divide the image (optional, used when --num-tiles is not specified).
+- **--image**: Path to the image file to slice (required).
+- **--num-tiles**: Number of tiles to create (optional).
+- **--dir**: Output directory for the tiles (default: ./).
+- **--format**: Output image format (default: png).
+- **--rows**: Number of rows to divide the image (optional, used when --num-tiles is not specified).
+- **--columns**: Number of columns to divide the image (optional, used when --num-tiles is not specified).
 
 Examples
 
