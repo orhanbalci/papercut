@@ -20,7 +20,7 @@ Add the following to your `Cargo.toml` to use Papercut as a library:
 
 ```toml
 [dependencies]
-papercut = "0.1.0"
+papercut = "0.1.2"
 ```
 
 ## 🚀 Usage
