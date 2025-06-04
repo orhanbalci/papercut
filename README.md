@@ -2,6 +2,10 @@
 
 Papercut is a Rust library and CLI tool for slicing and joining images. It provides functionality to split an image into tiles, save those tiles, and combine them back into a single image. This library is useful for image processing tasks such as creating image grids or splitting large images into smaller parts.
 
+## Acknowledgments
+
+This project is a Rust translation of the Python project [`image_slicer`](https://github.com/samdobson/image_slicer) by Sam Dobson. The functionality and structure of `papercut` are heavily inspired by the original project. Special thanks to [Sam Dobson](https://github.com/samdobson) for creating the original library.
+
 ## Features
 
 - **Slice Images**: Split an image into tiles based on the number of tiles or specified rows and columns.
